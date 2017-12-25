@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+
+function plane(newMake, newModel, newYear){
+   this.make = newMake;
+   this.model = newModel;
+   this.year = newYear;
+}
+
+myplane = new plane("cessna", "centurian", "1970");
+
+function displayPlane()  {
+    document.write("Make: ", this.make, "<br>");
+    document.write("Model: ", this.model, "<br>");   
+    document.write("Year: ", this.year, "<br>");  	
+}
+
+myplane.display = displayPlane;
+myplane.display();
+
+</script>
+
+</body>
+</html>

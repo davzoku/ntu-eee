@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Brochure Form</title>
+<meta charset="utf-8">
+<style>
+form {font-family: Arial, sans-serif; }
+fieldset { width: 500px;
+	border: 2px ridge #ff0000;
+	padding: 10px;}
+legend { font-family: Georgia, "Times New Roman", serif;
+	font-weight: bold; }
+label { padding-left: 10px; }
+</style>
+</head>
+<body>
+<h1>Order Free Brochure</h1>
+<form action="show_get.php" method="get">
+<label>First Name: <input type="text" name="fmail" id="fmail"></label><br><br>
+<label>Last Name: <input type="text" name="lmail" id="lmail"></label><br><br>
+<label>E-mail: <input type="text" name="email" id="email"></label><br><br>
+<fieldset>
+<legend>Mailing Address</legend>
+<label>Street: <input type="text" name="street" id="street" size="54"></label>
+<br><br>
+<label>City: <input type="text" name="city" id="city"></label>
+<label>State: <input type="text" name="state" id="state" maxlength="2" size="5">
+</label>
+<label>Zip: <input type="text" name="zip" id="zip" maxlength="5" size="5">
+</label>
+</fieldset>
+<br>
+<input type="submit" value="Contact"> <input type="reset">
+</form>
+</body>
+</html>

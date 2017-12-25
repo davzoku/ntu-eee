@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ALL FORMS</title>
+<meta charset="utf-8">
+</head>
+<body>
+<header>
+  <h1>All examples are here</h1>
+</header>
+
+ <h2>Slide 20</h2>
+ <h3>Join Our Newsletter</h3>
+<form action="show_get.php" method="get"> 
+   Email: <input type="text" name="CustEmail"  id="CustEmail" ><br >
+   <input type="submit" value="Sign Me Up!"> <input type="reset">
+</form>
+
+ <h2>Slide 22</h2>
+ <h3>Sample text Box</h3>
+<form action="show_get.php" method="get"> 
+   Name: <input type="text" name="CustName"  id="CustName" size=30 required  placeholder = "your name here"><br >
+   <input type="submit"> 
+</form>
+
+ <h2>Slide 23</h2>
+ <h3>Sample Password Box</h3>
+<form action="show_post.php" method="post"> 
+   Password: <input type="password" name="mypassword"  id="mypasswordid" required placeholder = "enter password"><br >
+   <input type="submit"> 
+</form>
+
+ <h2>Slide 24a</h2>
+<h3>Sample Check Box</h3>
+<form action="show_get.php" method="get"> 
+   <input type="checkbox" name="browser" value="ie"> Internet Explore<br>
+   <input type="checkbox" name="browser" value="moz" checked> Firefox<br>
+   <input type="submit"> 
+</form>
+
+<h2>Slide 24b</h2>
+<h3>Sample Check Box - Multivalues</h3>
+<form action="show_get.php" method="get"> 
+   <input type="checkbox" name="browser[]" value="ie"> Internet Explore<br>
+   <input type="checkbox" name="browser[]" value="moz" checked> Firefox<br>
+ <input type="submit"> 
+</form>
+
+<h2>Slide 25</h2>
+<h3>Sample Radio Buttons</h3>
+<form action="show_get.php" method="get"> 
+   <input type="radio" name="browser" value="ie"> Internet Explore<br>
+   <input type="radio" name="browser" value="moz" checked> Firefox<br>
+ <input type="submit"> 
+</form>
+
+<h2>Slide 26</h2>
+<h3>Sample Scrolling Text Box</h3>
+<form action="show_get.php" method="get"> 
+   <textarea type="textarea" name="comments" rows="4" cols="40">Enter your comments here </textarea>
+<input type="submit"> 
+</form>
+
+<h2>Slides 27 and 28</h2>
+<h3>Sample Select List</h3>
+<form action="show_get.php" method="get"> 
+   <select size="1" name="favbrowser">
+   <option> select your favourite browser  </option>
+   <option value="ie"> Internet Explorer  </option>
+   <option value="chrome"> Chrome  </option>
+   <option value="safari"> Safari </option>
+<input type="submit"> 
+</form>
+
+<h2>Slides 27 and 28</h2>
+<h3>Sample Select List - Showing all options</h3>
+<form action="show_get.php" method="get"> 
+   <select size="4" name="favbrowser">
+   <option> select your favourite browser  </option>
+   <option value="ie"> Internet Explorer  </option>
+   <option value="chrome"> Chrome  </option>
+   <option value="safari"> Safari </option>
+<input type="submit"> 
+</form>
+
+<h2>Slide 30a</h2>
+<h3>Text area with Reset button (1)</h3>
+<form action="show_get.php" method="get"> 
+   <textarea type="textarea" name="comments" rows="3" cols="20"> Comments : </textarea>
+<input type="submit">  
+<input type="reset">
+</form>
+
+<h2>Slide 30b</h2> 
+<h3>Text area with Reset button (2)</h3>
+<form action="show_get.php" method="get"> 
+   <textarea type="textarea" name="comments" rows="3" cols="20"> Comments : </textarea>
+<input type="submit" value="Submit Comments">  
+<input type="reset" value="Clear Comments">
+</form>
+
+<h2>Slide 31</h2>
+<h3>Hidden input</h3>
+<form action="show_get.php" method="get"> 
+   <input type="hidden" name="sendto" value="secret message">
+<input type="submit" value="Submit it">  
+</form>
+
+<h2>Slide 33</h2>
+<h3>Fieldset and Legend</h3>
+<fieldset><legend>Customer Information</legend>
+   <label>Name:   <input type="text" name="CName"  id="CName" size="30"></label>   <br><br >
+   <label>Email:   <input type="text" name="CEmail"  id="CEmail"></label>
+ </fieldset> 
+
+
+<footer>
+  <small><i>Copyright &copy; 2014 Your Name Here</i></small>
+</footer>
+</body>
+</html>
+
+

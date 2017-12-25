@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>JavaJam Coffee House</title> 
+
+<meta charset=“utf-8”>
+<link rel="stylesheet" href = "CSS/style.css">
+    <style>
+        .upDownButton{
+            background:#ffd800;
+            border:none;
+            width:20px;
+            color:#808080;
+            margin: 1px 1px 1px 1px;
+        }
+        .qtyLabel {
+            width: 20px;
+            background: #ffffff;
+            color: black;
+            margin: 0 0 0 0;
+            text-align: center;
+            margin: 1px 1px 1px 1px;
+        }
+        .empty{
+            visibility:collapse;
+        }
+        .updateCheckBox{
+            background:#eaca8f;
+        }
+
+    </style>
+    <script>
+        var debug = true;
+        var items = ["JJ", "CAL", "IC"];
+        
+        function onLoad() {
+
+            var oReq = new XMLHttpRequest();
+            oReq.open("get","PHP/get_price.php",true);
+
+
+            for(var i =0; i< items.length; i++){
+                console.log('price' + items[i].toString());
+                //Hide the price edit
+                //document.getElementById('price' + items[i].toString()).hidden = true;
+                //Hide the table column
+                document.getElementById('price' + items[i].toString()).parentElement.hidden = true;
+                document.getElementById('checkbox' + items[i].toString()).checked = false;
+            }
+
+
+
+        }
+        function increment(item) {
+            var qtyDOM = document.getElementById('qty' + item);
+            var qty = parseInt(qtyDOM.value);
+
+            if (qty < 99) {
+                qty+=1
+            }
+            //debugPrint(debug, "qty:" + qty);
+            qtyDOM.value = qty;
+            subtotal(item);
+            total();
+        }
+        function decrement(item) {
+            var qtyDOM = document.getElementById('qty' + item);
+            var qty = parseInt(qtyDOM.value);
+            console.log("Quantity: " + qty);
+
+
+            if (qty > 0) {
+                qty -= 1;
+            }
+            //debugPrint(debug, "qty:" + qty);
+            qtyDOM.value = qty;
+            subtotal(item);
+            total();
+        }
+        function onUpdateCheckBoxChange(item){
+            
+            checkCondition = document.getElementById('checkbox'+item.toString()).checked;
+            //Hide the table column
+            document.getElementById('price' + item.toString()).hidden = !checkCondition;
+            document.getElementById('price' + item.toString()).parentElement.hidden = !checkCondition;
+        }
+        function radioButton(buttonName) {
+            var button = document.getElementById(buttonName);
+            var drink = (/[A-Z]+/).exec(buttonName);
+            var sgldbl = (/[a-z]+/).exec(buttonName);//sgl-Single and dbl-Double
+            //document.getElementById(drink + "sgl").checked = false;
+            //document.getElementById(drink + "dbl").checked = false;
+
+            //document.getElementsByName(buttonName).checked = true;
+
+            debugPrint(debug, drink + sgldbl);
+            if (sgldbl == "dbl") {
+                document.getElementById(drink + "sgl").checked = false;
+                debugPrint(debug, "dbl");
+            }
+            if (sgldbl == "sgl") {
+                document.getElementById(drink + "dbl").checked = false;
+                debugPrint(debug, "sgl");
+            }
+
+            subtotal(drink.toString());
+            total();
+        }
+    </script>
+</head>
+<div id="wrapper">
+    <body onload = "onLoad()">      
+        <header>
+            <img src="javalogo.gif" height ="95em" width ="500em"></a>
+        </header>
+        <div>
+            <nav>
+                <ul >
+                <li><a href = "index.html">Home </a> &nbsp </li>
+                <li><a href = "admin.html" style="color:chocolate"> Product Price Update </a> &nbsp  </li>
+                </ul>
+            </nav>
+        </div>
+        <div id="main_content">
+        <div >
+                <h1 id="title" > Click to update product prices: </h1>
+        </div>
+            <table id="menu_table">
+                <tbody>
+                    <thead style="visibility:hidden">
+                        <td> CheckBox</td>
+                        <td> Coffee </td>
+                        <td> Description</td>
+                        <td> Value</td>
+                    </thead>
+                    <tr>
+                        <td class="updateCheckBox"> 
+                            <input id="checkboxJJ" type="checkbox" onchange="onUpdateCheckBoxChange('JJ')" />
+                        </td>
+                        <td> <strong> Just Java </strong> </td>
+                        <td>
+                            Regular hour blend, decaffeinated coffee, or flavor of the day.
+                            <br> Endless Cup $2.00
+                        </td>
+                        <td>
+                            <input style="width:50px" type="number" id="priceJJ" onchange="priceUpdated('JJ')" >
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="updateCheckBox"> 
+                            <input id="checkboxCAL" type="checkbox" onchange="onUpdateCheckBoxChange('CAL')"/>
+                        </td>
+                        <td> <strong> Cafe au Lait </strong> </td>
+                        <td>
+                            House blended coffee infused into a smooth, steamed milk.
+                            <br> Single $2.00 Double $3.00
+                        </td>
+ 
+                        <td>
+                                <input style="width:50px" type="number" id="priceCAL" onchange="priceUpdated('CAL')" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="updateCheckBox"> 
+                            <input id="checkboxIC" type="checkbox" onchange="onUpdateCheckBoxChange('IC')"/>
+                        </td>
+                        <td><strong> Iced Cappucino </strong> </td>
+                        <td>
+                            Sweetened espresso blended with icy-cold milk and served in a chilled glass.
+                            <br> Single $4.75 Double $5.75
+                        </td>
+                        <td>
+                                <input style="width:50px" type="number" id="priceIC" onchange="priceUpdated('IC')" >
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body >
+    <footer>
+        <p>
+            <em> Copyright &copy 2014 JavaJam Coffee House </em>
+            <br>
+            <a href = "mailto:zhiwei@tan.com"><em> zhiwei@tan.com </em></a>
+        </p>
+    </footer>
+</div>
+</html>

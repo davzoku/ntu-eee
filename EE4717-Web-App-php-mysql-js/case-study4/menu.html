@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		 <title>JavaJam Coffee House Menu</title>
+		 <meta charset="utf-8">
+<style>
+body {font-family:Verdana, Arial, sans-serif;
+      background-color: #ffeeba;
+}
+#wrapper { background-color: #c4a852; 
+           color: #000066;
+           width: 80%;
+		   margin: auto;
+           min-width:940px;
+} 
+#leftcolumn { float: left;
+	          width: 150px;
+
+} 
+#rightcolumn { margin-left: 155px;
+               background-color: #e0d7c0;
+               color: #000000;
+			   padding: 10px 20px;
+} 
+header { background-color: #99710d;
+        color: #c49d38; 
+        font-size: 150%; 
+        padding: 10px 10px 10px 155px;
+		background-image: url(img/javajam_logo.jpg); 
+		    background-position: center;
+		background-repeat: no-repeat;
+		height: 130px;
+}
+h2 { color: ##91700b; 
+     font-family: arial, sans-serif;
+}
+.content {padding: 20px 20px 0 20px;
+
+} 
+#floatleft { margin: 10px;
+             float: left;
+}
+
+footer {
+        padding: 10px 10px 10px 155px;
+font-size:70%;
+         text-align: center;
+		 clear: right;
+         padding-bottom:20px;
+		 background-color: #99710d;
+}
+footer a:link {
+    color: #000;
+	font-weight: bold;
+	 text-decoration:none;
+}
+nav ul { list-style-type: none; 
+         padding: 10px; }
+a:link {
+    color: #91700b;
+	font-weight: bold;
+	 text-decoration:none;
+}
+
+
+a:visited {
+    color: #91700b;
+	 text-decoration:none;
+}
+
+
+a:hover {
+    color: #543e08;
+	 text-decoration:none;
+}
+
+
+a:active {
+    color: #543e08;
+	 text-decoration:none;
+}
+tr:nth-of-type(even) {
+	background-color:#e0d7c0;
+    text-align: center;
+}
+tr:nth-of-type(odd) {
+	background-color: #c4a852;
+    text-align: center;
+}
+
+</style> 
+		 <script type="text/javascript">
+		 	function calQuantity(a,b,c,d,e){		
+		 		var totalqty = a + b + c + d + e;
+		 		return totalqty;
+		 	}
+
+		 	function calCost(a,b,c,d,e){
+		 		var JJ_ECprice = 2.0;
+		 		var CL_Sprice = 2.0;
+		 		var CL_Dprice = 3.0;
+		 		var IC_Sprice = 4.75;
+		 		var IC_Dprice = 5.75;
+		 		var totalcost = a*JJ_ECprice + b*CL_Sprice + c*CL_Dprice + d*IC_Sprice + e*IC_Dprice;
+		 		return totalcost;
+		 	}
+
+		 	function showTotal(){
+		 		//alert("alert");
+		 		var JJ_ECqty = parseInt(document.getElementById("JJ_EC").value);
+		 		var CL_Sqty = parseInt(document.getElementById("CL_S").value);
+		 		var CL_Dqty = parseInt(document.getElementById("CL_D").value);
+		 		var IC_Sqty = parseInt(document.getElementById("IC_S").value);
+		 		var IC_Dqty = parseInt(document.getElementById("IC_D").value);
+		 		document.getElementById("total_quantity_text_area").innerHTML = calQuantity(JJ_ECqty,CL_Sqty,CL_Dqty,IC_Sqty,IC_Dqty);
+		 		document.getElementById("total_cost_text_area").innerHTML = "$"+calCost(JJ_ECqty,CL_Sqty,CL_Dqty,IC_Sqty,IC_Dqty);
+		 		//var totalQuantityNode = document.getElementById("total_quantity_text_area");
+		 		//totalQuantityNode.innerHTML = "some dynamic html";
+		 	}
+		 	window.onload = showTotal;
+		 </script>
+	</head>
+
+	<body>
+		<div id="wrapper">
+  <header>
+
+  	  <!-- img from https://openclipart.org/image/2400px/svg_to_png/22305/pitr-Coffee-cup-icon.png -->
+  </header>
+  <div id="leftcolumn">
+				<nav>   
+					<ul><center>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="menu.html">Menu</a></li>
+						<li><a href="music.html">Music</a></li>
+						<li><a href="jobs.html">Jobs</a></li>
+					</ul> </center>
+				</nav>
+		   </div>
+  <div id="rightcolumn">
+    <div class="content"> 
+				<h2>Coffee at JavaJam</h2>
+
+					<form action="purchaseComplete.php" method="post">
+						<table border="0";>   
+							  <tr>
+									<td><strong>Just Java</strong></td>
+									<td>Regular house blend, decaffeinated coffee, or flavor of the day.</td>
+									<td> $2.00 </td>
+									<td colspan="3"><input type="number" class="orderbox" name="qty1" id="JJ_EC" value="0" maxlength="2" /></td>
+									
+							  </tr>
+							  <tr> 
+									<td><strong>Cafe au Lait</strong></td>
+									<td>House blend coffee infused into a smooth, steamed milk.</td>
+									<td>Single $2.00 </td>
+									<td><input type="number" class="orderbox" id="CL_S" name="qty2" value="0" maxlength="2" /></td>
+									<td>Double $3.00 </td>
+									<td><input type="number" class="orderbox" id="CL_D" name="qty3" value="0" maxlength="2" /></td>
+							  </tr>      
+							  <tr>
+									<td><strong>Iced Cappuccino</strong></td>
+									<td>Sweetend expresso blended with icy-cold milk and served in a chilled glass.</td>
+									<td>Single $4.75 </td>
+									<td><input type="number" class="orderbox" id="IC_S" name="qty4" value="0" maxlength="2" /></td>
+									<td>Double $5.75 </td>
+									<td><input type="number" class="orderbox" id="IC_D" name="qty5" value="0" maxlength="2" /></td>
+							  </tr>
+							  <tr>
+							  		<td colspan="2"><b>Total Quantity:</b></td>
+							  		<td colspan="4" ><p id="total_quantity_text_area"> 0</p></td>
+							  </tr>
+							  <tr>
+							  		<td colspan="2"><b>Total Cost:</b></td>
+							  		<td colspan="4" ><p id="total_cost_text_area"> 0</p></td>
+							  </tr>
+						 </table>
+						 <center><input type="submit" value="Purchase" id="purchase"/></center>
+					 </form>
+					 <!-- <form action="priceUpdate.php" method="post">
+						 <input type="submit" value="Update" id="update""/> 
+					 </form> 
+					 <form action="reportmain.html" method="post">
+						 <input type="submit" value="Report" id="report""/> -->
+					 </form>      
+				 </div>
+			</div>		
+
+  <footer><small>
+<i> Copyright &copy; 2017 JavaJam Coffee House <br>
+<a href="mailto:kokwai@teng.com">kokwai@teng.com</a>
+</i>
+
+
+</small>
+    </footer>        
+ 
+		 <script type="text/javascript">
+		 	var JJ_ECNode = document.getElementById("JJ_EC");
+		 	var CL_SNode = document.getElementById("CL_S");
+		 	var CL_DNode = document.getElementById("CL_D");
+		 	var IC_SNode = document.getElementById("IC_S");
+		 	var IC_DNode = document.getElementById("IC_D");
+			JJ_ECNode.addEventListener("change", showTotal, false);
+			CL_SNode.addEventListener("change", showTotal, false);
+			CL_DNode.addEventListener("change", showTotal, false);
+			IC_SNode.addEventListener("change", showTotal, false);
+			IC_DNode.addEventListener("change", showTotal, false);
+		 </script>   
+         </div>
+	</body>
+</html>

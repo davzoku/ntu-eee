@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<!-- pswd_chk.html
+     A document for pswd_chk.ps
+     -->
+<html>
+  <head>
+    <title> Illustrate password checking> </title>
+    <script type = "text/javascript"  src = "pswd_chk.js" >
+    </script>
+  </head>
+  <body>
+    <h3> Password Input </h3>
+    <form id = "myForm"  action = "" >
+      <p>
+      
+      <label> Your password 
+        <input type = "password" id = "initial"  
+               size = "10" />
+      </label>
+      <br /><br />
+ 
+      <label> Verify password 
+        <input type = "password"  id = "second" 
+               size = "10" />
+      </label>
+      <br /><br />
+
+      <input type = "reset"  name = "reset" />
+      <input type = "submit"  name = "submit" />
+      </p>
+    </form>
+
+<!-- Script for registering the event handlers  -->
+<script type = "text/javascript" >
+document.getElementById("myForm").onsubmit = chkPasswords;
+</script>
+   </body>
+</html>
