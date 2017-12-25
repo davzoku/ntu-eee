@@ -13,8 +13,6 @@ EE3002 is one of the core modules for any NTU EEE student.
 
 This is my first time working with Assembly code and I must say it is quite intriguing to understand how low-level programming actually work.
 
-[Partystarter Project Repo](https://github.com/xiongchenyu6/web_design)
-
 
 ## EE4717 Web Application Design
 *in HTML, CSS, JS, PHP, MySQL*
@@ -24,3 +22,5 @@ This is my first time working with Assembly code and I must say it is quite intr
 Lecturers: A/P Chong Yong Kim, Dr Ang Yew Hock
 
 This module covers the processes in developing web applications; from storyboarding to frontend and backend programming.
+
+[Partystarter Project Repo](https://github.com/xiongchenyu6/web_design)
