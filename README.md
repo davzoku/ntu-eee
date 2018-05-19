@@ -24,3 +24,25 @@ Lecturers: A/P Chong Yong Kim, Dr Ang Yew Hock
 This module covers the processes in developing web applications; from storyboarding to frontend and backend programming.
 
 [Partystarter Project Repo](https://github.com/xiongchenyu6/web_design)
+
+## EE4718 Enterprise Network Design
+*using Packet Tracer*
+
+(Jan 18 - May 18)
+
+Lecturers: Dr Ang Yew Hock
+
+This module covers the top-down design, bottom-up implementation of an Enterprise Network.
+
+It includes IP address assignment, subnetting, supernetting, ACL design + implementation, IPv4-IPv6 migration etc. 
+
+## EE4791 Database Systems
+*in MySQL*
+
+(Jan 18 - May 18)
+
+Lecturers: A/P Wang Lipo
+
+This module covers various concepts regarding database systems.
+
+The topics includes ER diagrams, normalization, denormalization, star schemas, data warehousing / data marts etc.
